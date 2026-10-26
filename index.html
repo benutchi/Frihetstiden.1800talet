@@ -379,8 +379,13 @@
                             <div className="max-w-3xl mx-auto space-y-6 pb-20">
 
                                 {/* Läskortet – styrs av valt typsnitt och bakgrundsfärg */}
-                                <article className={`p-8 md:p-12 rounded-3xl shadow-md border relative animate-fade-in reader-theme-${colorTheme} ${fontFamily === 'lexend' ? 'font-lexend' : 'font-standard'}`}>
-                                    <div className="absolute top-0 left-0 w-2.5 h-full bg-amber-500 rounded-l-3xl"></div>
+<article
+    style={{
+        backgroundColor: COLOR_THEMES.find(t => t.id === colorTheme)?.bg || "#ffffff",
+        borderColor: COLOR_THEMES.find(t => t.id === colorTheme)?.border || "#e2e8f0"
+    }}
+    className={`p-8 md:p-12 rounded-3xl shadow-md border relative animate-fade-in ${fontFamily === 'lexend' ? 'font-lexend' : 'font-standard'}`}
+>                                    <div className="absolute top-0 left-0 w-2.5 h-full bg-amber-500 rounded-l-3xl"></div>
 
                                     {/* Textkontroller: Teckenstorlek + Läslägesknapp */}
                                     <div className="flex flex-wrap items-center justify-between gap-3 pb-6 mb-6 border-b border-black/10">
