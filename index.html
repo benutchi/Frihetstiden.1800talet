@@ -83,6 +83,19 @@
             color: #0f172a;
             border-color: #cbd5e1;
         }
+        .reader-content p,
+.reader-content li {
+    font-size: var(--reader-font-size);
+}
+
+.reader-content h2 {
+    font-size: calc(var(--reader-font-size) * 1.5);
+}
+
+.reader-content h3 {
+    font-size: calc(var(--reader-font-size) * 1.3);
+}
+        
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -482,9 +495,9 @@
 
                                     {/* Boksidans formaterade text */}
                                     <div
-                                        style={{ fontSize: `${fontScale}em` }}
-                                        className="space-y-4 cursor-text select-text"
-                                    >
+    className="space-y-4 cursor-text select-text reader-content"
+    style={{ "--reader-font-size": `${fontScale}rem` }}
+>
                                         {renderFormattedBody(section.text)}
                                     </div>
                                 </article>
