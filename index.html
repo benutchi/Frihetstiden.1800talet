@@ -159,8 +159,7 @@
                         console.warn("Lucide render fail:", e);
                     }
                 }
-            }, [activeBlock, activeSection, isSidebarOpen, showSettings]);
-
+}, [activeBlock, activeSection, isSidebarOpen]);
             // Navigering framåt över kapitelgränser
             const goToNextSection = () => {
                 if (activeSection < sections.length - 1) {
